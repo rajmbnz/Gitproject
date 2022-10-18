@@ -1,2 +1,2 @@
 FROM  ubuntu/apache2
-ADD . /var/www/html/
+COPY . /usr/share/nginx/html
