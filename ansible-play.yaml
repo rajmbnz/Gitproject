@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+     - name: stop previos container
+       shell: dokcer stop webapp
+     - name: remove stopped container
+       shell: docker rm -f webapp
+     - name: create docker container
+       shell: docker run -itd --name webapp -p 82:80 kiranpkdocker/staging:latest
